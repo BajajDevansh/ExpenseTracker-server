@@ -1,6 +1,5 @@
 package com.dbajaj.ExpenseTracker_server.controllers;
 
-import com.dbajaj.ExpenseTracker_server.DTO.TransactionDTO;
 import com.dbajaj.ExpenseTracker_server.entity.Transaction;
 import com.dbajaj.ExpenseTracker_server.entity.UserEntity;
 import com.dbajaj.ExpenseTracker_server.services.TransactionService;

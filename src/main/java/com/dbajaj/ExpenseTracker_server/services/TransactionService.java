@@ -1,6 +1,5 @@
 package com.dbajaj.ExpenseTracker_server.services;
 
-import com.dbajaj.ExpenseTracker_server.DTO.TransactionDTO;
 import com.dbajaj.ExpenseTracker_server.entity.Transaction;
 import com.dbajaj.ExpenseTracker_server.repositories.TransactionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
