@@ -3,6 +3,7 @@ package com.dbajaj.ExpenseTracker_server.services;
 import com.dbajaj.ExpenseTracker_server.DTO.UserDTO;
 import com.dbajaj.ExpenseTracker_server.entity.UserEntity;
 import com.dbajaj.ExpenseTracker_server.repositories.UserRepo;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,9 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepo.save(user);
         return user;
+    }
+
+    public UserEntity getByEmail(@NotBlank String email) {
+        return userRepo.findUserByEmail(email).orElse(null);
     }
 }

@@ -16,7 +16,7 @@ public class TransactionService {
     @Autowired
     private TransactionRepo transactionRepo;
     @Transactional
-    public Transaction saveTransactions(TransactionDTO transactionDTO){
+    public Transaction saveTransactions(Transaction transactionDTO){
         try{
             Transaction transaction = new Transaction();
             transaction.setUserId(transactionDTO.getUserId());
