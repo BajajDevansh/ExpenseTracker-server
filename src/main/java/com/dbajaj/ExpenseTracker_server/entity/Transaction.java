@@ -11,8 +11,6 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
-@RequiredArgsConstructor
 @AllArgsConstructor
 @Document(collection = "transactions")
 public class Transaction {
@@ -23,4 +21,8 @@ public class Transaction {
     private String type;
     private LocalDateTime date;
     private String description;
+
+    public Transaction() {
+
+    }
 }

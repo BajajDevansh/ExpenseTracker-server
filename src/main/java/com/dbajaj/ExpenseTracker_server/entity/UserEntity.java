@@ -10,9 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document(collection = "users")
-@NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 public class UserEntity {
     @Id
     private String Id;
@@ -20,4 +18,8 @@ public class UserEntity {
     @Indexed(unique = true)
     private String email;
     private String password;
+
+    public UserEntity() {
+
+    }
 }

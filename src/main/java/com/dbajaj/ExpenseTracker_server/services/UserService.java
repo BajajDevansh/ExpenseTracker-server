@@ -17,15 +17,14 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
     @Transactional
     public UserEntity registerNewUser(UserDTO userDTO){
-        if(userRepo.existsByEmail(userDTO.getEmail())){
+        if (userRepo.existsByEmail(userDTO.getEmail())) {
             throw new RuntimeException("Email Already Exists");
         }
         UserEntity user = new UserEntity();
-        user.setEmail(user.getEmail());
+        user.setEmail(userDTO.getEmail());
         user.setFullName(userDTO.getFullName());
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
-        userRepo.save(user);
-        return user;
+        return userRepo.save(user);
     }
 
     public UserEntity getByEmail(@NotBlank String email) {
